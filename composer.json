@@ -1,0 +1,16 @@
+{
+    "name": "jchdezperez/bts_api_buy_crypto",
+    "description": "PHP Client Library for JCHDEZPEREZ BTS_API_CRYPTO",
+    "version": "1.0.0",
+    "authors": [
+      {
+        "name": "Juan Carlos hernández Pérez",
+        "email": "webmaster@braintechsystem.com",
+        "homepage": "https://www.braintechsystem.com/",
+        "role": "Developer to share knowledge"
+      }
+    ],
+    "license": [
+      "CREATIVE COMMONS"
+    ]
+  }
