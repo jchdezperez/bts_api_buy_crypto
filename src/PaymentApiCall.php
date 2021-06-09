@@ -22,10 +22,38 @@ class PaymentApiCall {
      */
     public function createCharge($cryptoToken, $userCode) {
         $params = [
-            'cryptoToken'   => $cryptoToken,
-            'userCode'      => $userCode
+            'cryptoToken'   => (string) $cryptoToken,
+            'userCode'      => (int) $userCode
         ];
         return $this->executeRequest('/v01/payments/create/charge', $params);
+    }
+
+    /**
+     * Get list all hashes
+     *
+     * @return void
+     */
+    public function getAllHash() {
+        $params = [];
+        return $this->executeRequest('/v01/payments/all/hash', $params);
+    }
+
+
+    /**
+     * Get list all hashes by rank
+     * 
+     * Rank 1: bronce
+     * Rank 2: plata
+     * Rank 3: oro
+     *
+     * @return void
+     */
+    public function getAllHashByRank($rank, $userCode) {
+        $params = [
+            'rank'          => (string) $rank,
+            'userCode'      => (int) $userCode
+        ];
+        return $this->executeRequest('/v01/payments/all/hash/rank', $params);
     }
 
 
