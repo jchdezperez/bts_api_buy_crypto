@@ -63,7 +63,9 @@ class PaymentApiCall {
      * @return void
      */
     public function getAllHash() {
-        $params = [];
+        $params = [
+            'userCode'      => (int) $userCode
+        ];
         return $this->executeRequest('/v01/payments/hash/list', $params);
     }
 
@@ -78,8 +80,8 @@ class PaymentApiCall {
      */
     public function getAllHashByRank($rank, $userCode) {
         $params = [
-            'rank'          => (string) $rank,
-            'userCode'      => (int) $userCode
+            'userCode'      => (int) $userCode,
+            'rank'          => (string) $rank
         ];
         return $this->executeRequest('/v01/payments/hash/rank', $params);
     }
@@ -94,8 +96,8 @@ class PaymentApiCall {
      */
     public function createCharge($cryptoToken, $userCode) {
         $params = [
-            'cryptoToken'   => (string) $cryptoToken,
-            'userCode'      => (int) $userCode
+            'userCode'      => (int) $userCode,
+            'cryptoToken'   => (string) $cryptoToken
         ];
         return $this->executeRequest('/v01/payments/charge/create', $params);
     }
