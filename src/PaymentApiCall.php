@@ -56,7 +56,7 @@ class PaymentApiCall {
 
 
 
-
+    
     /**
      * Get list all hashes
      *
@@ -85,7 +85,6 @@ class PaymentApiCall {
         ];
         return $this->executeRequest('/v01/payments/hash/rank', $params);
     }
-
 
     /**
      * Create a purchase against a Hash 
