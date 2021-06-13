@@ -62,7 +62,7 @@ class PaymentApiCall {
      *
      * @return void
      */
-    public function getAllHash() {
+    public function getAllHash($userCode) {
         $params = [
             'userCode'      => (int) $userCode
         ];
