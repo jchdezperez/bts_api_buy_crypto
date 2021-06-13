@@ -14,19 +14,48 @@ class PaymentApiCall {
     }
 
     /**
-     * Create a purchase against a Hash 
+     * Create or add wallet
      *
-     * @param String $cryptoToken
      * @param Int $userCode
      * @return void
      */
-    public function createCharge($cryptoToken, $userCode) {
+    public function createWallet($userCode) {
         $params = [
-            'cryptoToken'   => (string) $cryptoToken,
             'userCode'      => (int) $userCode
         ];
-        return $this->executeRequest('/v01/payments/create/charge', $params);
+        return $this->executeRequest('/v01/payments/wallet/create', $params);
     }
+
+    /**
+     * Get list of all wallets
+     *
+     * @param Int $userCode
+     * @return void
+     */
+    public function getWallets($userCode) {
+        $params = [
+            'userCode'      => (int) $userCode
+        ];
+        return $this->executeRequest('/v01/payments/wallet/list', $params);
+    }
+
+    /**
+     * Get description of your wallet
+     *
+     * @param Int $userCode
+     * @param String $tokenWallet
+     * @return void
+     */
+    public function getInfoWallet($userCode, $tokenWallet) {
+        $params = [
+            'userCode'      => (int) $userCode,
+            'tokenWallet'   => (string) $tokenWallet,
+        ];
+        return $this->executeRequest('/v01/payments/wallet/info', $params);
+    }
+
+
+
 
     /**
      * Get list all hashes
@@ -35,9 +64,8 @@ class PaymentApiCall {
      */
     public function getAllHash() {
         $params = [];
-        return $this->executeRequest('/v01/payments/all/hash', $params);
+        return $this->executeRequest('/v01/payments/hash/list', $params);
     }
-
 
     /**
      * Get list all hashes by rank
@@ -53,9 +81,24 @@ class PaymentApiCall {
             'rank'          => (string) $rank,
             'userCode'      => (int) $userCode
         ];
-        return $this->executeRequest('/v01/payments/all/hash/rank', $params);
+        return $this->executeRequest('/v01/payments/hash/rank', $params);
     }
 
+
+    /**
+     * Create a purchase against a Hash 
+     *
+     * @param String $cryptoToken
+     * @param Int $userCode
+     * @return void
+     */
+    public function createCharge($cryptoToken, $userCode) {
+        $params = [
+            'cryptoToken'   => (string) $cryptoToken,
+            'userCode'      => (int) $userCode
+        ];
+        return $this->executeRequest('/v01/payments/charge/create', $params);
+    }
 
     /**
      * Basic to API CRYPTO call
