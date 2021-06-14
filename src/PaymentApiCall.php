@@ -53,9 +53,6 @@ class PaymentApiCall {
         ];
         return $this->executeRequest('/v01/payments/wallet/info', $params);
     }
-
-
-
     
     /**
      * Get list all hashes
@@ -72,9 +69,9 @@ class PaymentApiCall {
     /**
      * Get list all hashes by rank
      * 
-     * Rank 1: bronce
-     * Rank 2: plata
-     * Rank 3: oro
+     * Rank 1: bronze
+     * Rank 2: silver
+     * Rank 3: gold
      *
      * @return void
      */
@@ -91,12 +88,14 @@ class PaymentApiCall {
      *
      * @param String $cryptoToken
      * @param Int $userCode
+     * @param String $tokenWallet
      * @return void
      */
-    public function createCharge($cryptoToken, $userCode) {
+    public function createCharge($cryptoToken, $userCode, $tokenWallet) {
         $params = [
             'userCode'      => (int) $userCode,
-            'cryptoToken'   => (string) $cryptoToken
+            'cryptoToken'   => (string) $cryptoToken,
+            'tokenWallet'   => (string) $tokenWallet
         ];
         return $this->executeRequest('/v01/payments/charge/create', $params);
     }
