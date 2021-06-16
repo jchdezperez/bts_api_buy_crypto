@@ -1,14 +1,14 @@
 {
     "name": "jchdezperez/bts_api_buy_crypto",
     "type": "library",
-    "description": "PHP Client Library for JCHDEZPEREZ BTS_API_BUY_CRYPTO",
-    "keywords": ["braintechsystem","bts","customer","users", "cryptocurrency", "cryptocurrencies"],
-    "version": "1.0.0",
+    "description": "PHP Client Library for BTS_API_BUY_CRYPTO",
+    "keywords": ["braintechsystem","bts","customer","users", "cryptohash"],
+    "version": "1.1.0",
     "license": "MIT",
     "homepage": "https://braintechsystem.com",
     "authors": [
         {
-        "name": "Juan Carlos hernández Pérez",
+        "name": "Brain Tech System",
         "email": "webmaster@braintechsystem.com",
         "homepage": "https://www.braintechsystem.com/",
         "role": "Developer to share knowledge"
