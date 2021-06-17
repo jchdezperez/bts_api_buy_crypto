@@ -8,6 +8,10 @@ API BTS FOR THE PURCHASE OF CRYPTOHASHES
 
 Connection API with all BrainTechSystem cryptohashes purchase services.
 
+# Official documentation
+
+In this link you can read the documentation about this API: [Documentation](https://docs.braintechsystem.com/api/hash/)
+
 ## To connect against the API
 
 If you are developing with a framework or with native code, I recommend that you use this client to connect against the API. However, in the resources you will find all the basic calls that you have to make in order to store or extract the necessary information.
